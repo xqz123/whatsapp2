@@ -2,7 +2,9 @@ import { Component } from "@angular/core";
 import template from "./app.component.html";
 import { Platform } from "ionic-angular";
 import { StatusBar } from "ionic-native";
+import { Meteor } from 'meteor/meteor';
 import {TabsContainerComponent} from "../pages/tabs-container/tabs-container.component";
+import {LoginComponent} from '../pages/auth/login.component';
 
 @Component({
   selector: "app",
@@ -10,9 +12,10 @@ import {TabsContainerComponent} from "../pages/tabs-container/tabs-container.com
 
 })
 export class AppComponent {
-    rootPage = TabsContainerComponent;
+    rootPage: any;
 
   constructor(platform: Platform) {
+     this.rootPage = Meteor.user() ? TabsContainerComponent : LoginComponent;
      platform.ready().then(() => {
        // Okay, so the platform is ready and our plugins are available.
        // Here you can do any higher level native things you might need.

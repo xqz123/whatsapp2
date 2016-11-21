@@ -6,6 +6,10 @@ import {TabsContainerComponent} from "../pages/tabs-container/tabs-container.com
 import {ChatsComponent} from "../pages/chats/chats.component";
 import {MomentModule} from "angular2-moment";
 import {MessagesPage} from "../pages/chat/messages-page.component";
+import {LoginComponent} from '../pages/auth/login.component';
+import {VerificationComponent} from '../pages/auth/verification.component';
+import {ProfileComponent} from '../pages/auth/profile.component';
+import {ChatsOptionsComponent} from '../pages/chats/chats-options.component';
 
 @NgModule({
   // Components, Pipes, Directive
@@ -13,14 +17,22 @@ import {MessagesPage} from "../pages/chat/messages-page.component";
     AppComponent,
     TabsContainerComponent,
     ChatsComponent,
-    MessagesPage
+    MessagesPage,
+    LoginComponent,
+    VerificationComponent,
+    ProfileComponent,
+    ChatsOptionsComponent
   ],
   // Entry Components
   entryComponents: [
     AppComponent,
     TabsContainerComponent,
     ChatsComponent,
-    MessagesPage
+    MessagesPage,
+    LoginComponent,
+    VerificationComponent,
+    ProfileComponent,
+    ChatsOptionsComponent
   ],
   // Providers
   providers: [
