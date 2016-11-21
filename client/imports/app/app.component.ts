@@ -1,13 +1,22 @@
 import { Component } from "@angular/core";
 import template from "./app.component.html";
-import style from "./app.component.scss";
+import { Platform } from "ionic-angular";
+import { StatusBar } from "ionic-native";
+import {TabsContainerComponent} from "../pages/tabs-container/tabs-container.component";
 
 @Component({
   selector: "app",
-  template,
-  styles: [ style ]
+  template
+
 })
 export class AppComponent {
-  constructor() {
+    rootPage = TabsContainerComponent;
+
+  constructor(platform: Platform) {
+     platform.ready().then(() => {
+       // Okay, so the platform is ready and our plugins are available.
+       // Here you can do any higher level native things you might need.
+       StatusBar.styleDefault();
+     });
   }
 }

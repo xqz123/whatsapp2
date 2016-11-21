@@ -1,32 +1,39 @@
 import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from "./app.component";
-import { DemoComponent } from "./demo/demo.component";
-import { DemoDataService } from "./demo/demo-data.service";
+
+import { AppComponent } from './app.component';
+import { IonicApp, IonicModule } from "ionic-angular";
+import {TabsContainerComponent} from "../pages/tabs-container/tabs-container.component";
+import {ChatsComponent} from "../pages/chats/chats.component";
+import {MomentModule} from "angular2-moment";
+import {MessagesPage} from "../pages/chat/messages-page.component";
 
 @NgModule({
   // Components, Pipes, Directive
   declarations: [
     AppComponent,
-    DemoComponent
+    TabsContainerComponent,
+    ChatsComponent,
+    MessagesPage
   ],
   // Entry Components
   entryComponents: [
-    AppComponent
+    AppComponent,
+    TabsContainerComponent,
+    ChatsComponent,
+    MessagesPage
   ],
   // Providers
   providers: [
-    DemoDataService
+    
   ],
   // Modules
   imports: [
-    BrowserModule
+    IonicModule.forRoot(AppComponent),
+    MomentModule
   ],
   // Main Component
-  bootstrap: [ AppComponent ]
+  bootstrap: [ IonicApp ]
 })
 export class AppModule {
-  constructor() {
-
-  }
+  
 }
